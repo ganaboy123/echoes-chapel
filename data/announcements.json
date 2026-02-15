@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "id": "a1",
+      "text": "Sunday Worship Service: 8:00 AM - 11:00 AM",
+      "type": "service",
+      "active": true
+    },
+    {
+      "id": "a2",
+      "text": "Thursday Relationship Clinic: 6:00 PM - 8:00 PM",
+      "type": "program",
+      "active": true
+    },
+    {
+      "id": "a3",
+      "text": "Friday Prophetic & Prayer Service: 6:00 PM - 9:30 PM",
+      "type": "program",
+      "active": true
+    }
+  ],
+  "updatedAt": "2026-02-13T23:15:46.210Z"
+}

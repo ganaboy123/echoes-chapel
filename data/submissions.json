@@ -1,0 +1,79 @@
+{
+  "contact": [
+    {
+      "id": "contact_1771024967579_7w2mg",
+      "name": "Harrison Appiah",
+      "email": "harrisonappiah68@gmail.com",
+      "subject": "hi",
+      "message": "hi",
+      "createdAt": "2026-02-13T23:22:47.579Z"
+    },
+    {
+      "id": "contact_1771025410240_ar0lr",
+      "name": "Harrison Appiah",
+      "email": "harrisonappiah68@gmail.com",
+      "subject": "hi",
+      "message": "hi",
+      "createdAt": "2026-02-13T23:30:10.240Z"
+    }
+  ],
+  "donations": [],
+  "impact": [],
+  "visits": [
+    {
+      "id": "visit_1771025013810_mo347",
+      "name": "Harrison Appiah",
+      "phone": "0595478897",
+      "email": "harrisonappiah68@gmail.com",
+      "serviceDate": "2026-02-19",
+      "attendanceType": "returning",
+      "prayerNeeds": "",
+      "checkinCode": "ECI-2E1HHT",
+      "status": "checked-in",
+      "createdAt": "2026-02-13T23:23:33.810Z",
+      "checkedInAt": "2026-02-13T23:26:15.191Z"
+    }
+  ],
+  "checkins": [
+    {
+      "id": "checkin_1771025175191_mhtxs",
+      "checkinCode": "ECI-2E1HHT",
+      "name": "HARRISON APPIAH",
+      "createdAt": "2026-02-13T23:26:15.191Z"
+    }
+  ],
+  "newsletter": [
+    {
+      "id": "news_1771024937329_qfpcw",
+      "email": "harrisonappiah68@gmail.com",
+      "provider": "mailchimp",
+      "page": "media.html",
+      "createdAt": "2026-02-13T23:22:17.330Z"
+    },
+    {
+      "id": "news_1771024955760_jb7ey",
+      "email": "harrisonappiah68@gmail.com",
+      "provider": "mailchimp",
+      "page": "media.html",
+      "createdAt": "2026-02-13T23:22:35.760Z"
+    },
+    {
+      "id": "news_1771025401990_otwuf",
+      "email": "harrisonappiah68@gmail.com",
+      "provider": "mailchimp",
+      "page": "index.html",
+      "createdAt": "2026-02-13T23:30:01.990Z"
+    }
+  ],
+  "rsvps": [
+    {
+      "id": "rsvp_1771025219646_s87j0",
+      "eventId": "e1",
+      "name": "Harrison Appiah",
+      "email": "harrisonappiah68@gmail.com",
+      "phone": "0595478897",
+      "guests": "1",
+      "createdAt": "2026-02-13T23:26:59.646Z"
+    }
+  ]
+}

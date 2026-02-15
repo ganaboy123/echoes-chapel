@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "id": "e1",
+      "title": "Global Worship Night",
+      "date": "2026-02-14",
+      "time": "6:00 PM",
+      "location": "Kwabenya KFC - Top Floor",
+      "description": "An evening of worship, prayer, and community."
+    },
+    {
+      "id": "e2",
+      "title": "Leadership Intensive",
+      "date": "2026-02-21",
+      "time": "5:30 PM",
+      "location": "Echoes Chapel International",
+      "description": "Training for teams and emerging leaders."
+    },
+    {
+      "id": "e3",
+      "title": "Community Impact Day",
+      "date": "2026-03-03",
+      "time": "9:00 AM",
+      "location": "Accra Outreach Zones",
+      "description": "Serve the city through outreach and compassion."
+    }
+  ],
+  "updatedAt": "2026-02-13T23:15:46.211Z"
+}
