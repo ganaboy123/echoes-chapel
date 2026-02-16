@@ -1,4 +1,4 @@
-const page = document.documentElement.getAttribute('data-page');
+﻿const page = document.documentElement.getAttribute('data-page');
 
 const shouldShowGateway = () => {
   if (page === 'gateway.html') return false;
@@ -163,13 +163,11 @@ const initHeroSlideshow = () => {
   if (!container) return;
 
   const slides = [
-    { file: 'prophet (3).jpeg', pos: 'center 16%', posMobile: 'center 14%' },
-    { file: 'prophet (6).jpeg', pos: 'center 18%', posMobile: 'center 14%' },
-    { file: 'slide (1).jpeg', pos: 'center 30%', posMobile: 'center 24%' },
-    { file: 'slide (2).jpeg', pos: 'center 24%', posMobile: 'center 20%' },
-    { file: 'slide (3).jpeg', pos: 'center 24%', posMobile: 'center 20%' },
-    { file: 'prophet (1).jpeg', pos: 'center 16%', posMobile: 'center 14%' },
-    { file: 'prophet (2).jpeg', pos: 'center 18%', posMobile: 'center 14%' }
+    { file: 'WhatsApp Image 2026-02-14 at 7.10.29 PM.jpeg', pos: 'center 16%', posMobile: 'center 14%' },
+    { file: 'slide (1).jpeg', pos: 'center 26%', posMobile: 'center 22%' },
+    { file: 'prophet (2).jpeg', pos: 'center 18%', posMobile: 'center 16%' },
+    { file: 'prophet (3).jpeg', pos: 'center 18%', posMobile: 'center 16%' },
+    { file: 'prophet (1).jpeg', pos: 'center 18%', posMobile: 'center 16%' }
   ];
 
   const toSrc = (name) => `images/${encodeURIComponent(name)}`;
@@ -183,6 +181,8 @@ const initHeroSlideshow = () => {
     container.appendChild(node);
     return node;
   });
+
+  if (!nodes.length) return;
 
   let activeIndex = 0;
   const intervalMs = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 6500 : 4600;
@@ -372,7 +372,7 @@ const initInspirationGenerator = () => {
     lastMessageIndex = messageIndex;
 
     const selected = scriptures[scriptureIndex];
-    scriptureEl.textContent = `"${selected.text}" � ${selected.verse}`;
+    scriptureEl.textContent = `"${selected.text}" — ${selected.verse}`;
     messageEl.textContent = encouragementTemplates[messageIndex];
 
     inspireBtn.hidden = true;
@@ -464,6 +464,9 @@ initWhatsAppFab();
 document.querySelectorAll('img:not([loading])').forEach((img) => {
   if (!img.closest('header')) img.loading = 'lazy';
 });
+
+
+
 
 
 
