@@ -37,43 +37,12 @@ if (toggle && nav) {
   toggle.addEventListener('click', () => {
     nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false');
-    if (!nav.classList.contains('open')) {
-      document.querySelectorAll('.dropdown.open').forEach(item => item.classList.remove('open'));
-    }
   });
 }
 
 navLinks.forEach(link => {
   if (page && link.getAttribute('href') === page) link.classList.add('active');
 });
-
-document.querySelectorAll('.dropdown-toggle').forEach(toggleLink => {
-  const toggleDropdown = (e) => {
-    if (!window.matchMedia('(max-width: 980px)').matches) return;
-    e.preventDefault();
-    e.stopPropagation();
-
-    const parent = toggleLink.closest('.dropdown');
-    if (!parent) return;
-
-    document.querySelectorAll('.dropdown.open').forEach(item => {
-      if (item !== parent) item.classList.remove('open');
-    });
-    parent.classList.toggle('open');
-  };
-
-  toggleLink.addEventListener('click', toggleDropdown);
-  toggleLink.addEventListener('touchstart', toggleDropdown, { passive: false });
-});
-
-if (nav) {
-  nav.addEventListener('click', (e) => {
-    if (!window.matchMedia('(max-width: 980px)').matches) return;
-    if (!e.target.closest('.dropdown')) {
-      document.querySelectorAll('.dropdown.open').forEach(item => item.classList.remove('open'));
-    }
-  });
-}
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -163,11 +132,7 @@ const initHeroSlideshow = () => {
   if (!container) return;
 
   const slides = [
-    { file: 'WhatsApp Image 2026-02-14 at 7.10.29 PM.jpeg', pos: 'center 16%', posMobile: 'center 14%' },
-    { file: 'slide (1).jpeg', pos: 'center 26%', posMobile: 'center 22%' },
-    { file: 'prophet (2).jpeg', pos: 'center 18%', posMobile: 'center 16%' },
-    { file: 'prophet (3).jpeg', pos: 'center 18%', posMobile: 'center 16%' },
-    { file: 'prophet (1).jpeg', pos: 'center 18%', posMobile: 'center 16%' }
+    { file: 'prophet (3).jpeg', pos: 'center 18%', posMobile: 'center 16%' }
   ];
 
   const toSrc = (name) => `images/${encodeURIComponent(name)}`;
@@ -185,12 +150,15 @@ const initHeroSlideshow = () => {
   if (!nodes.length) return;
 
   let activeIndex = 0;
-  const intervalMs = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 6500 : 4600;
-  window.setInterval(() => {
-    nodes[activeIndex].classList.remove('is-active');
-    activeIndex = (activeIndex + 1) % nodes.length;
-    nodes[activeIndex].classList.add('is-active');
-  }, intervalMs);
+
+  if (nodes.length > 1) {
+    const intervalMs = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 6500 : 4600;
+    window.setInterval(() => {
+      nodes[activeIndex].classList.remove('is-active');
+      activeIndex = (activeIndex + 1) % nodes.length;
+      nodes[activeIndex].classList.add('is-active');
+    }, intervalMs);
+  }
 };
 
 const ensureYouTubeApi = (() => {
@@ -464,6 +432,8 @@ initWhatsAppFab();
 document.querySelectorAll('img:not([loading])').forEach((img) => {
   if (!img.closest('header')) img.loading = 'lazy';
 });
+
+
 
 
 

@@ -120,13 +120,6 @@ nav{display:flex;gap:16px;flex-wrap:wrap}
 nav a{color:rgba(255,255,255,0.95);font-weight:800;font-size:.92rem;position:relative}
 nav a::after{content:"";display:block;height:2px;width:0%;margin-top:6px;background:rgba(255,255,255,0.9);transition:width .25s ease;border-radius:999px}
 nav a:hover::after,nav a.active::after{width:100%}
-.nav-item{position:relative;display:flex;align-items:center}
-.dropdown-toggle::after{content:"▾";margin-left:6px;font-size:.8rem}
-.dropdown-menu{position:absolute;top:110%;left:0;min-width:240px;background:linear-gradient(180deg,#0a1f4a,#071638);border:1px solid var(--line);border-radius:14px;padding:10px;display:none;box-shadow:var(--shadow);z-index:10}
-.dropdown-menu{background:linear-gradient(180deg,var(--navy-800),var(--navy-900));border:1px solid var(--line-strong)}
-.dropdown-menu a{display:block;padding:8px 10px;border-radius:10px;color:#e8f0ff}
-.dropdown-menu a:hover{background:rgba(92,162,255,0.2)}
-.dropdown:hover .dropdown-menu,.dropdown:focus-within .dropdown-menu{display:grid}
 .menu-toggle{display:none;border:1px solid rgba(255,255,255,0.6);background:transparent;color:#fff;padding:8px 10px;border-radius:10px;font-weight:600}
 .hero{margin-top:54px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;align-items:center;min-height:70vh;position:relative;overflow:hidden;isolation:isolate}
 .hero-video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.25) contrast(1.18)}
@@ -581,17 +574,20 @@ html[data-page="pastor.html"] main .card{
   header{position:static;border-radius:20px}
   nav{display:none;width:100%}
   nav.open{display:flex;flex-direction:column;gap:10px;background:rgba(7,22,56,0.86);padding:12px;border-radius:12px}
-  .menu-toggle{display:inline-flex}
+  .menu-toggle{
+    display:inline-flex;
+    font-size:0;
+    color:transparent;
+    text-indent:-9999px;
+    overflow:hidden;
+    white-space:nowrap;
+  }
   .hero{grid-template-columns:1fr}
   .grid3,.grid2,.media-grid,.founder-grid{grid-template-columns:1fr}
   .prophet-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
   .founder-image,.prophet-image{height:240px}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;align-items:flex-start}
-  .nav-item{width:100%}
-  .dropdown-menu{position:static;display:none;box-shadow:none;background:transparent;border:0;padding:0}
-  .dropdown-menu a{color:rgba(255,255,255,0.9)}
-  .dropdown.open .dropdown-menu{display:grid}
   .welcome-hover-card{min-height:260px}
   .welcome-hover-overlay p{
     opacity:1;
@@ -1746,110 +1742,6 @@ html[data-page="about.html"] main .card .btn:focus-visible{
   border-color:#d7e4ff !important;
 }
 
-/* About dropdown menu: white panel with blue label pills */
-.nav-item.dropdown .dropdown-menu{
-  background:#ffffff !important;
-  border:1px solid rgba(13,44,104,0.18) !important;
-  box-shadow:0 14px 30px rgba(7,22,56,0.18) !important;
-}
-
-.nav-item.dropdown .dropdown-menu a{
-  background:#0a2c8f !important;
-  color:#ffffff !important;
-  border:1px solid #0a2c8f !important;
-  border-radius:999px !important;
-  padding:10px 14px !important;
-  font-weight:800 !important;
-  margin:4px 0 !important;
-  line-height:1.3 !important;
-}
-
-.nav-item.dropdown .dropdown-menu a:hover,
-.nav-item.dropdown .dropdown-menu a:focus-visible{
-  background:#08307a !important;
-  border-color:#08307a !important;
-  color:#ffffff !important;
-}
-
-@media (max-width: 980px){
-  .nav-item.dropdown .dropdown-menu{
-    background:#ffffff !important;
-    border:1px solid rgba(13,44,104,0.18) !important;
-    padding:8px !important;
-    border-radius:12px !important;
-  }
-
-  .nav-item.dropdown .dropdown-menu a{
-    color:#ffffff !important;
-  }
-}
-
-/* Update: About dropdown panel back to deep blue */
-.nav-item.dropdown .dropdown-menu{
-  background:linear-gradient(180deg,#0a1f4a,#071638) !important;
-  border:1px solid rgba(150,186,255,0.35) !important;
-}
-
-@media (max-width: 980px){
-  .nav-item.dropdown .dropdown-menu{
-    background:linear-gradient(180deg,#0a1f4a,#071638) !important;
-    border:1px solid rgba(150,186,255,0.35) !important;
-  }
-}
-
-/* Final About dropdown style: white panel + deep-blue label pills */
-.nav-item.dropdown .dropdown-menu{
-  background:#ffffff !important;
-  border:1px solid rgba(13,44,104,0.18) !important;
-}
-
-.nav-item.dropdown .dropdown-menu a{
-  background:#071638 !important;
-  border-color:#071638 !important;
-  color:#ffffff !important;
-}
-
-.nav-item.dropdown .dropdown-menu a:hover,
-.nav-item.dropdown .dropdown-menu a:focus-visible{
-  background:#0a1f4a !important;
-  border-color:#0a1f4a !important;
-  color:#ffffff !important;
-}
-
-@media (max-width: 980px){
-  .nav-item.dropdown .dropdown-menu{
-    background:#ffffff !important;
-    border:1px solid rgba(13,44,104,0.18) !important;
-  }
-}
-
-/* Revert About dropdown to deep blue panel */
-.nav-item.dropdown .dropdown-menu{
-  background:linear-gradient(180deg,#0a1f4a,#071638) !important;
-  border:1px solid rgba(150,186,255,0.35) !important;
-}
-
-.nav-item.dropdown .dropdown-menu a{
-  background:transparent !important;
-  border-color:transparent !important;
-  border-radius:10px !important;
-  color:#e8f0ff !important;
-}
-
-.nav-item.dropdown .dropdown-menu a:hover,
-.nav-item.dropdown .dropdown-menu a:focus-visible{
-  background:rgba(92,162,255,0.2) !important;
-  border-color:transparent !important;
-  color:#ffffff !important;
-}
-
-@media (max-width: 980px){
-  .nav-item.dropdown .dropdown-menu{
-    background:linear-gradient(180deg,#0a1f4a,#071638) !important;
-    border:1px solid rgba(150,186,255,0.35) !important;
-  }
-}
-
 /* Living by Faith: 3-minute YouTube preview card */
 .media-thumb.sermon-snippet{
   height:200px;
@@ -2234,8 +2126,7 @@ input,textarea,select,button{
     -webkit-overflow-scrolling:touch;
   }
 
-  nav.open a,
-  nav.open .dropdown-menu a{
+  nav.open a{
     white-space:normal;
     line-height:1.3;
   }
@@ -2346,43 +2237,6 @@ input,textarea,select,button{
 
   .footer-links{
     gap:8px;
-  }
-}
-
-/* Mobile nav icon + reliable about dropdown */
-@media (max-width: 980px){
-  .menu-toggle{
-    font-size:0;
-    line-height:0;
-    width:40px;
-    height:40px;
-    padding:0;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .menu-toggle::before{
-    content:'⋮';
-    font-size:1.45rem;
-    line-height:1;
-    color:#ffffff;
-    font-weight:900;
-  }
-
-  .dropdown.open > .dropdown-menu{
-    display:grid !important;
-  }
-
-  nav.open .dropdown-menu{
-    margin-top:6px;
-  }
-
-  nav.open .dropdown-menu a{
-    display:block;
-    padding:10px 12px;
-    border-radius:10px;
-    white-space:normal;
   }
 }
 
@@ -2696,63 +2550,26 @@ input,textarea,select,button{
   }
 }
 
-/* Tablet hover stability: prevent About dropdown flicker */
-@media (min-width: 981px) and (max-width: 1280px){
-  .nav-item.dropdown{
-    position:relative;
+@media (max-width:980px){
+  .menu-toggle{
+    width:40px;
+    height:40px;
+    padding:0;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-indent:0;
+    font-size:0;
+    color:transparent;
   }
 
-  .nav-item.dropdown::after{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    top:100%;
-    height:12px;
-  }
-
-  .nav-item.dropdown .dropdown-menu{
-    top:calc(100% + 8px) !important;
-    left:0;
-  }
-
-  .nav-item.dropdown:hover > .dropdown-menu,
-  .nav-item.dropdown:focus-within > .dropdown-menu{
-    display:grid !important;
+  .menu-toggle::before{
+    content:"\22EE";
+    font-size:1.45rem;
+    line-height:1;
+    color:#ffffff;
+    font-weight:900;
   }
 }
 
-/* Final desktop/tablet dropdown stabilization */
-@media (min-width: 981px){
-  .nav-item.dropdown{
-    position:relative;
-  }
 
-  .nav-item.dropdown::after{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    top:100%;
-    height:14px;
-  }
-
-  .nav-item.dropdown > .dropdown-menu{
-    display:grid !important;
-    top:calc(100% + 6px) !important;
-    left:0;
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-    transform:translateY(6px);
-    transition:opacity .16s ease, transform .16s ease, visibility .16s ease;
-  }
-
-  .nav-item.dropdown:hover > .dropdown-menu,
-  .nav-item.dropdown:focus-within > .dropdown-menu{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
-    transform:translateY(0);
-  }
-}
